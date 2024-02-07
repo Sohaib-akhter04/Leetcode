@@ -1,30 +1,22 @@
-def check(string):
+def check_parenthesis(string):
     stack=[]
-    open_list=['(','{','[']
-    close_list=[')','}',']']
+    open_bracket=['(','{','[']
+    close_bracket=[')','}',']']
     for i in string:
-        if i in open_list:
+        if i in open_bracket:
             stack.append(i)
-        elif i in close_list:
-            pos=close_list.index(i)
-            if(len(stack)>0 and (open_list[pos]==stack[len(stack)-1])):
+        elif i in close_bracket:
+            pos=close_bracket.index(i)
+            if (len(stack)>0 and open_bracket[pos]==stack[len(stack)-1]):
                 stack.pop()
             else:
-                return "UnBalanced"
+                return "unbalanced"
+
     if len(stack)==0:
-        return "Balanced"
+        return "balanced"
     else:
-        return "Unbalanced"
+        return "unbalanced"
 
-
-
-
-if __name__ == '__main__':
+if __name__=='__main__':
     string = "{[]{()}}"
-    print(string,"-", check(string))
- 
-    string = "[{}{})(]"
-    print(string,"-", check(string))
- 
-    string = "((()"
-    print(string,"-",check(string))
+    print(check_parenthesis(string))
