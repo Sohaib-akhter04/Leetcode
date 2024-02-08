@@ -7,8 +7,16 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        
+        max_Profit=0
+        min_price=prices[0]
+        for i in range(len(prices)):
+            max_Profit=max(max_Profit,prices[i]-min_price)
+            min_price=min(min_price,prices[i])
+        return max_Profit
 
 if __name__=="__main__":
-    prices=[7,1,5,3,6,4]
+    prices=[7,6,4,3,1]
     solution=Solution()
+    temp=solution.maxProfit(prices)
+    print(temp)
+   
