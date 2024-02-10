@@ -7,8 +7,19 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
+        num_indices={}
+
+        for index,num in enumerate(nums):
+            if num in num_indices and index-num_indices[num]<=k:
+                return True
+            num_indices[num]=index
+        return False
+            
 
 
 
 if __name__=="__main__":
-    pass
+    solution=Solution()
+    nums = [1,0,1,1]
+    k = 1
+    print(solution.containsNearbyDuplicate(nums,k))
