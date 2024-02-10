@@ -6,9 +6,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        result=[]
+        dictionary={}
+        for index,element in enumerate(nums):
+            if element in dictionary:
+                return True
+            else:
+                dictionary[element]=1
+        
+        return False
 
 if __name__=="__main__":
     solution=Solution()
-    nums=[1,2,3,1]
-    solution.containsDuplicate(nums)
+    nums=[1,2,3]
+    print(solution.containsDuplicate(nums))
