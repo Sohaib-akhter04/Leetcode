@@ -6,10 +6,9 @@ class Solution(object):
         """
         n=len(nums)
         s=(n*(n+1))/2
-        Sum=sum(nums)
-        result=s-Sum
+        result=s-sum(nums)
         return int(result)
-        
+
 if __name__ == "__main__":
     solution=Solution()
     nums=[3,0,2]
