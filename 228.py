@@ -14,7 +14,7 @@ class Solution(object):
 
         for i in range(1,len(nums)):
             if nums[i]==end+1: #7==6+1
-                end=nums[i]
+                end=nums[i]  #7 idher ayega tou loop khtm hojayega 
             else:
                 if start==end:
                     ranges.append(str(end))
@@ -23,8 +23,8 @@ class Solution(object):
                 start=nums[i] # 7
                 end=nums[i] # 7
         if start==end:
-            ranges.append(str(end))
-        else:
+            ranges.append(str(end)) # 7==7
+        else:# else me start iska different hoga tou wo tou piche saved hai or wo else me ayega hi jab or change hoga jb wo plus nhi horha
             ranges.append(str(start)+"->"+str(end))
         return ranges
 
