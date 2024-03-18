@@ -10,12 +10,13 @@ class Solution(object):
         result=0
         for i in range(len(columnTitle)):
             result=result*26+(ord(columnTitle[i])-ord('A')+1)
+            #print(result)
         print(result)
         
 
 if __name__ =="__main__":
     solution=Solution()
-    char ="ZY"
+    char ="AB"
     solution.titleToNumber(char)
    
 
