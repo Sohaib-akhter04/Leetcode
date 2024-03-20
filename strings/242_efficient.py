@@ -10,7 +10,8 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-        for w in set(s):
+        for w in set(s): 
+            """set is for unique iteration"""
             if s.count(w)!=t.count(w):
                 return False
         return True
