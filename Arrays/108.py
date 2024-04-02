@@ -10,6 +10,12 @@ class TreeNode:
         self.right = right
 
 
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
         total_nums=len(nums)
@@ -19,19 +25,26 @@ class Solution:
         mid=total_nums//2
         return TreeNode(nums[mid],self.sortedArrayToBST(nums[:mid]),self.sortedArrayToBST(nums[mid+1 :]))
 
-def inorderTraversal(node):
-        result=[]
-        if node:
-            result.extend(inorderTraversal(node.left))
-            result.append(node.val)
-            result.extend(inorderTraversal(node.right))
-        return result
-        
+
+# Function to print the inorder traversal of the tree
+def inorderTraversal(root):
+    if root:
+        inorderTraversal(root.left)
+        print(root.val, end=" ")
+        inorderTraversal(root.right)
+
+# Print the inorder traversal of the resulting binary search tree
+
+
 
 
 if __name__ =='__main__':
-    solution=Solution()
-    nums=[-10,-3,0,5,10]
-    root=solution.sortedArrayToBST(nums)
-    result=inorderTraversal(root)
-    print(result)
+    # solution=Solution()
+    # nums=[-10,-3,0,5,10]
+    # root=solution.sortedArrayToBST(nums)
+    # result=inorderTraversal(root)
+    # print(result)
+    nums = [-10, -3, 0, 5, 9]
+    solution = Solution()
+    root = solution.sortedArrayToBST(nums)
+    (inorderTraversal(root))
